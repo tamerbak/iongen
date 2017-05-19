@@ -1,0 +1,52 @@
+<!-- Generated template for the VojCard component -->
+<div>
+  <ion-card>
+    <div class="voj-style">
+      <!--[ngStyle]="backgroundImage"     style="margin-right: 0;position: absolute;bottom: -8px; padding-left: 0;"-->
+      <img [src]="cover" *ngIf="cover"/>
+      <div *ngIf="!cover && thumbnail"><br><br></div>
+      <ion-item class="voj-style" no-lines>
+        <ion-avatar item-left *ngIf="thumbnail">
+          <img [src]="thumbnail">
+        </ion-avatar>
+      </ion-item>
+      <ion-list-header class="voj-style" text-center no-padding no-margin no-lines *ngIf="title">{{title}}
+      </ion-list-header>
+      <ion-label no-lines *ngIf="subtitle1" class="voj-style" text-center>
+        <ion-icon [name]="subtitleIcon1"></ion-icon>
+        <h3>{{subtitle1}}</h3>
+      </ion-label>
+      <ion-label no-lines *ngIf="subtitle2" class="voj-style" text-center>
+        <ion-icon [name]="subtitleIcon2" item-left></ion-icon>
+        <h3>{{subtitle2}}</h3></ion-label>
+      <ion-card-content class="voj-style" no-margin no-lines *ngIf="content">{{content}}</ion-card-content>
+    </div>
+
+
+    <ion-item>
+      <button ion-button icon-left item-right>{{actionName}}</button>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="person"></ion-icon>
+          <div>12 disponibles</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>4 Likes</div>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col center text-right>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</div>

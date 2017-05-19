@@ -1,0 +1,39 @@
+voj-card {
+
+  ion-item.voj-style {
+    //padding-left: 0;
+    background: transparent;
+    position: relative;
+    bottom: 25px;
+    //margin-bottom: 16px;
+  }
+
+  ion-label.voj-style {
+    bottom: 25px;
+    position: relative;
+    margin-top: 0;
+  }
+
+  ion-row.voj-style {
+    bottom: 25px;
+    position: relative;
+    margin-top: 0;
+  }
+
+  div.voj-style {
+    height: calc(100% - 25px);
+  }
+
+  ion-list-header.voj-style{
+    bottom: 30px;
+    font-size: large;
+    //border-top: none ;
+  }
+
+  ion-card-content.voj-style{
+    bottom: 30px;
+    position: relative;
+    //border-top: none ;
+  }
+
+}

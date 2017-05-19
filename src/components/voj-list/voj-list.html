@@ -1,0 +1,9 @@
+<!-- Generated template for the VojList component -->
+<div>
+  <ion-list-header>{{title}}</ion-list-header>
+  <ion-list>
+    <div *ngFor="let card of cards">
+      <voj-card [title]="card.title" [content]="card.content" [action-name]="card.actionName"> </voj-card>
+    </div>
+  </ion-list>
+</div>

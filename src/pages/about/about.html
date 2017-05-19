@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <button ion-button (click)="goToPage()">test Navigation</button>
+  <voj-card title="Test Claude" content="le contenu détaillé ici" action-name="Action 1" thumbnail="assets/img/advance-card-bttf.png" date="12/06/2017"> </voj-card>
+  <voj-card [title]="title" [content]="content" [action-name]="actionName" cover="assets/img/advance-card-bttf.png" thumbnail="assets/img/advance-card-bttf.png"> </voj-card>
+
+  <voj-list [title]="listTitle" [cards]="cards"></voj-list>
+
+</ion-content>

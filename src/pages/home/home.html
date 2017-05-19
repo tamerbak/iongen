@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar></ion-navbar>
+</ion-header>
+
+<voj-header></voj-header>
+
+<ion-content padding>
+  <h2>Welcome to Ionic!</h2>
+  <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p>
+
+  <button ion-button (click)="goToPage()">Click me</button>
+  <voj-card title="Mon titre" content="Ma description ici" action-name="Delete" subtitle1="Date: 12/06/2017"
+            subtitle1-icon="calendar" subtitle2="Tarif: 20€/h" subtitle2-icon="pricetag"></voj-card>
+
+  <ion-fab top left edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-button icon-right>facebook<ion-icon name="logo-facebook"></ion-icon></button>
+      Twitter
+      <button ion-button icon-left><ion-icon name="logo-twitter"></ion-icon>Twitter</button>
+      Vimeo
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      Google+
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
+
+<voj-footer></voj-footer>
