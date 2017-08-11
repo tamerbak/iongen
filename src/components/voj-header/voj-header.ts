@@ -23,6 +23,7 @@ export class VojHeader {
   @Input('mission-button-title') missionButtonTitle: string;
   @Input('offer-button-title') offerButtonTitle: string;
   @Input('search-button-title') searchButtonTitle: string;
+  //@Input('type') isViewNavbar:string;
 
 
   constructor(private platform: Platform) {

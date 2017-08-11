@@ -12,20 +12,22 @@
       </ion-item>
       <ion-list-header class="voj-style" text-center no-padding no-margin no-lines *ngIf="title">{{title}}
       </ion-list-header>
-      <ion-label no-lines *ngIf="subtitle1" class="voj-style" text-center>
-        <ion-icon [name]="subtitleIcon1"></ion-icon>
+      <ion-item no-lines *ngIf="subtitle1" class="voj-style subtitle">
+        <ion-icon [name]="subtitleIcon1" item-start small></ion-icon>
         <h3>{{subtitle1}}</h3>
-      </ion-label>
-      <ion-label no-lines *ngIf="subtitle2" class="voj-style" text-center>
-        <ion-icon [name]="subtitleIcon2" item-left></ion-icon>
-        <h3>{{subtitle2}}</h3></ion-label>
+      </ion-item>
+      <ion-item no-lines *ngIf="subtitle2" class="voj-style subtitle">
+        <ion-icon [name]="subtitleIcon2" item-start small></ion-icon>
+        <h3>{{subtitle2}}</h3></ion-item>
       <ion-card-content class="voj-style" no-margin no-lines *ngIf="content">{{content}}</ion-card-content>
     </div>
 
-
-    <ion-item>
-      <button ion-button icon-left item-right>{{actionName}}</button>
-    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center *ngFor="let button of buttons ">
+          <button ion-button icon-left (click)="button.action($event)">{{button.label}}</button></ion-col>
+      </ion-row>
+    </ion-grid>
 
     <ion-row>
       <ion-col>
@@ -35,16 +37,16 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-left clear small>
+        <button ion-button icon-left outline small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>4 Likes</div>
         </button>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="note">
       <ion-col center text-right>
         <ion-note>
-          11h ago
+          {{note}}
         </ion-note>
       </ion-col>
     </ion-row>

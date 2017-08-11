@@ -1,3 +1,25 @@
 voj-header {
 
+  .generic {
+    height: $generic-navbar-width;
+  }
+
+  ion-item.voj-style{
+    background: transparent;
+  }
+
+  span.voj-style{
+    font-size: 8rem;
+    font-weight: bold;
+    margin-top: 16px;
+  }
+
+  ion-segment-button.voj-style{
+    display: grid;
+    height: auto !important;
+  }
+
+  .toolbar-background {
+    //background-color: deepskyblue;
+  }
 }

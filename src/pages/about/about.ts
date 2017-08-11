@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, App, ViewController} from 'ionic-angular';
 import {HomePage} from "../home/home";
 import {ContactPage} from "../contact/contact";
 
@@ -13,7 +13,10 @@ export class AboutPage {
   actionName:string;
   cards: any;
   listTitle:string;
-  constructor(public navCtrl: NavController) {
+  actions: any;
+  @ViewChild('contentMenu') nav;
+
+  constructor(public navCtrl: NavController, public appCtrl: App, public viewCtrl:ViewController) {
 
     this.title = "un autre titre dynamique";
     this.content = "un autre texte de détails..";
@@ -21,6 +24,16 @@ export class AboutPage {
 
     this.listTitle = "Ma liste des cartes";
 
+    this.actions = [{
+      label:"test",
+      action : () => {this.goToPage()}
+    }, {
+      label:"test2",
+      action : () => {this.goToPage2()}
+    }
+    ];
+
+    debugger;
     this.cards = [{
       title: "Jobyer 1",
       content: "contenu 1",
@@ -47,7 +60,20 @@ export class AboutPage {
   }
 
   goToPage() {
+    //debugger;
+    this.appCtrl.getRootNav().push(ContactPage);
+    //this.viewCtrl.getNav().push(ContactPage);
+
+    //this.navCtrl.push(ContactPage);
+  }
+
+  goToPage2() {
+    //debugger;
+    //this.appCtrl.getRootNav().push(ContactPage);
+    //this.viewCtrl.getNav().push(ContactPage);
+
     this.navCtrl.push(ContactPage);
   }
+
 
 }

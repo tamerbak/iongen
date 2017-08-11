@@ -1,8 +1,11 @@
-<ion-header>
-  <ion-navbar></ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
-<voj-header></voj-header>
 
 <ion-content padding>
   <h2>Welcome to Ionic!</h2>
@@ -16,22 +19,16 @@
   </p>
 
   <button ion-button (click)="goToPage()">Click me</button>
-  <voj-card title="Mon titre" content="Ma description ici" action-name="Delete" subtitle1="Date: 12/06/2017"
-            subtitle1-icon="calendar" subtitle2="Tarif: 20€/h" subtitle2-icon="pricetag"></voj-card>
+  <voj-card title="Mon titre" content="Ma description ici" action-name="Mon identité" subtitle1="Tél: 0669938121"
+            subtitle1-icon="call" subtitle2="E-mail: test@compte.com" subtitle2-icon="mail"  thumbnail="assets/img/advance-card-bttf.png"></voj-card>
 
-  <ion-fab top left edge>
-    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-    <ion-fab-list>
-      <button ion-button icon-right>facebook<ion-icon name="logo-facebook"></ion-icon></button>
-      Twitter
-      <button ion-button icon-left><ion-icon name="logo-twitter"></ion-icon>Twitter</button>
-      Vimeo
-      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
-      Google+
-      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-    </ion-fab-list>
+
+  <ion-fab bottom right>
+    <button ion-fab (click)="openLoginsPage()" color="vojgreen">
+      <ion-icon name="log-in"></ion-icon>
+    </button>
+
+
   </ion-fab>
 
 </ion-content>
-
-<voj-footer></voj-footer>

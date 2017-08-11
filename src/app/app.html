@@ -63,7 +63,9 @@
   </ion-menu>
 
   <!-- main navigation -->
-  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main></ion-nav>
-  <ion-nav [root]="rootPage2" #contentMenu swipeBackEnabled="false" ></ion-nav>
-
+  <voj-header></voj-header>
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false" main class="voj-style"></ion-nav>
+  <ion-nav [root]="rootPage2" #contentMenu swipeBackEnabled="false" id="contenuMenu" class="voj-style"></ion-nav>
+  <ion-nav *ngIf="true" [root]="rootPage3" #contentMenu2 swipeBackEnabled="false" id="contenuMenu2" class="voj-style"></ion-nav>
+  <voj-footer></voj-footer>
 </ion-split-pane>

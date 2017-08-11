@@ -24,11 +24,18 @@ export class VojCard {
   @Input('subtitle2') subtitle2:string;
   @Input('subtitle1-icon') subtitleIcon1:string;
   @Input('subtitle2-icon') subtitleIcon2:string;
+  @Input('note') note:string;
+  @Input('buttons') buttons: Array <{label : string, action: Function}>;
 
   constructor() {
     console.log('Hello VojCard Component');
     //this.cover = "assets/img/advance-card-bttf.png";
     //this.text = 'Hello World';
+  }
+
+  launchAction(event) {
+    debugger;
+    //this.actions.;
   }
 
 }

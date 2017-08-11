@@ -14,3 +14,16 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+ion-nav{
+  margin-top: $generic-navbar-width;
+}
+
+ion-content{
+  height: calc(100% - #{$generic-navbar-width});
+}
+
+.scroll-content{
+  margin-bottom: $generic-footer-width;
+}

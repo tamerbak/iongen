@@ -1,25 +1,46 @@
 <!-- Generated template for the VojHeader component -->
-<ion-header>
-  <ion-navbar *ngIf="isWeb">
-    <ion-buttons end>
-      <button ion-button icon-right outline>
+<ion-header no-border>
+  <ion-navbar *ngIf="isWeb" class="generic">
+    <ion-item class="voj-style" no-lines>
+      <button ion-button icon-right outline item-end>
         {{searchButtonTitle}}
         <!--ion-icon name="search"></ion-icon-->
       </button>
-      <button ion-button icon-right outline>
+      <button ion-button icon-right outline item-end>
         {{offerButtonTitle}}
         <!--ion-icon name="search"></ion-icon-->
       </button>
-      <button ion-button icon-right outline>
+      <button ion-button icon-right outline item-end>
         {{missionButtonTitle}}
         <!--ion-icon name="search"></ion-icon-->
       </button>
-      <button ion-button icon-right outline>
+      <button ion-button icon-right outline item-end>
         {{accountButtonTitle}}
         <!--ion-icon name="person"></ion-icon-->
       </button>
-    </ion-buttons>
+    </ion-item>
+    <div padding>
+      <ion-segment >
+        <ion-segment-button value="1" class="voj-style">
+          <span ion-text class="voj-style">8</span> Contrats en attente
+        </ion-segment-button>
+        <ion-segment-button value="3" class="voj-style">
+          <span ion-text class="voj-style">3</span>
+          Pointages à valider
+        </ion-segment-button>
+        <ion-segment-button value="4" class="voj-style">
+          <span ion-text class="voj-style">0</span>
+          Missions à clôturer
+        </ion-segment-button>
+      </ion-segment>
+    </div>
   </ion-navbar>
+
+  <!--ion-navbar *ngIf="isViewNavbar && isWeb" >
+    <!-- Sub navigation bar, content depends on every view -->
+    <!--ion-title>test</ion-title>
+  </ion-navbar-->
+
 
   <ion-navbar *ngIf="!isWeb">
     <ion-segment [(ngModel)]="icons" color="secondary">

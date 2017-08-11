@@ -34,7 +34,7 @@ export class TabsPage {
   ionViewWillEnter(){
     if (!this.platform.is('cordova')){
       this.tabBarElement = document.querySelector('#tabs');
-      this.tabBarElement.style.height = "calc(100% + 56px)";
+      //this.tabBarElement.style.height = "calc(100% - 56px)";
     }
   }
 }

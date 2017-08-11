@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {NavController, Platform} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {NavController, Platform, App, ViewController, Events} from 'ionic-angular';
+import {ContactPage} from "../contact/contact";
 
 @Component({
   selector: 'page-home',
@@ -9,8 +10,12 @@ export class HomePage {
 
   isWeb:boolean = false;
   tabBarElement:any;
+  @ViewChild('contentMenu') nav2;
 
-  constructor(public navCtrl: NavController, private platform: Platform) {
+  constructor(public navCtrl: NavController,
+              private platform: Platform,
+              public appCtrl:App,
+              public viewCtrl:ViewController, public event:Events) {
 
     this.isWeb = !platform.is('cordova');
 
@@ -23,6 +28,15 @@ export class HomePage {
   }
 
   goToPage(){
+    //this.appCtrl.getRootNav().push(AboutPage);
+    //this.appCtrl.getActiveNav().push(ContactPage);
+    //debugger;
+    this.event.publish('navigate:side', {page:ContactPage});
+    //this.navCtrl.push(ContactPage);
+    //this.nav2.push(ContactPage);
+    //this.viewCtrl.getNav().push(ContactPage);
+    //let nav:any = this.appCtrl.getRootNav().getActiveChildNav();
+    //nav..push(ContactPage);
     //this.navCtrl.push()
   }
 

@@ -1,10 +1,12 @@
 import {Component, ViewChild} from '@angular/core';
-import {Nav, Platform} from 'ionic-angular';
+import {Nav, Platform, Events} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import {AboutPage} from "../pages/about/about";
+import {ContactPage} from "../pages/contact/contact";
+var test:boolean;
 
 export interface PageInterface {
   title: string;
@@ -24,9 +26,12 @@ export class MyApp {
   // the root nav is a child of the root app component
   // @ViewChild(Nav) gets a reference to the app's root nav
   @ViewChild(Nav) nav: Nav;
+  @ViewChild('contentMenu') nav2;
 
   rootPage:any = TabsPage;
   rootPage2:any = AboutPage;
+  rootPage3:any = AboutPage;
+
   cards: any;
   listTitle:string;
   appPages: PageInterface[] = [
@@ -46,7 +51,7 @@ export class MyApp {
     { title: 'Signup', name: 'SignupPage', component: "", icon: 'person-add' }
   ];
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public event:Events) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -79,6 +84,12 @@ export class MyApp {
     }]
 
 
+  }
+
+  ngOnInit() {
+    this.event.subscribe('navigate:side', (data:any) => {
+      this.nav2.push(data.page);
+    });
   }
 
 
